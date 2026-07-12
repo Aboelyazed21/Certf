@@ -1,0 +1,32 @@
+[
+    {
+      "id": "cert-01",
+      "title": "Google AI Fundamentals",
+      "provider": "Google",
+      "date": "February 2026",
+      "description": "Comprehensive certification covering data-driven intelligent systems, machine learning models, and AI principles.",
+      "skills": ["Artificial Intelligence", "Machine Learning", "Data Science"],
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+      "credentialId": "GOOG-AI-2026"
+    },
+    {
+      "id": "cert-02",
+      "title": "ISTQB Certified Tester",
+      "provider": "Other",
+      "date": "May 2026",
+      "description": "Foundation level certification for software quality assurance, covering testing principles, Page Object Model, and automation.",
+      "skills": ["QA Testing", "Selenium", "Pytest", "Automation"],
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop",
+      "credentialId": "ISTQB-FL-9921"
+    },
+    {
+      "id": "cert-03",
+      "title": "Advanced Front-End Web Development",
+      "provider": "Meta",
+      "date": "July 2026",
+      "description": "Mastery of modern frontend architectures, responsive UI/UX design, and complex state management.",
+      "skills": ["React 19", "Tailwind CSS", "TypeScript", "UI/UX"],
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop",
+      "credentialId": "META-FE-404"
+    }
+  ]

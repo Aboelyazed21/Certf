@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEZO | Premium Certificates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Premium Loading Screen -->
+    <div id="loader">
+        <div class="glow-ring"></div>
+        <div class="loader-text">Loading Excellence...</div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Animated Glass Background -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="glass-overlay"></div>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-badge reveal-up"></div>
+            <!-- Animated ZEZO Title -->
+            <h1 class="hero-title zezo-anim reveal-up" style="animation-delay: 0.1s;">ZEZO</h1>
+            <p class="hero-subtitle reveal-up" id="typewriter-text" style="animation-delay: 0.2s;"></p>
+            <button class="cta-button reveal-up" id="exploreBtn" style="animation-delay: 0.4s;">
+                Explore Credentials
+                <span class="btn-glow"></span>
+            </button>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats reveal-up">
+            <div class="stat-card">
+                <h3 class="counter" data-target="19">0</h3>
+                <p>Certificates</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="counter" data-target="8">0</h3>
+                <p>Providers</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="counter" data-target="350">0</h3>
+                <p>Learning Hours</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="counter" data-target="100">0</h3>
+                <p>% Passion</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            
+            <!-- Search & Filters -->
+            <div class="controls reveal-up">
+                <div class="search-bar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="searchInput" placeholder="Search by name, provider, or skill...">
+                </div>
+                
+                <div class="filters" id="filterContainer">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="meta">Meta</button>
+                    <button class="filter-btn" data-filter="ibm">IBM</button>
+                    <button class="filter-btn" data-filter="harvard">Harvard</button>
+                    <button class="filter-btn" data-filter="udemy">Udemy</button>
+                    <button class="filter-btn" data-filter="iti">ITI</button>
+                    <button class="filter-btn" data-filter="almentor">Almentor</button>
+                    <button class="filter-btn" data-filter="other">Other</button>
+                </div>
+            </div>
+
+            <!-- Certificates Grid -->
+            <div class="grid" id="certificatesGrid">
+
+                <!-- 1. ISTQB -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/istqb.png" alt="ISTQB"></div>
+                    <div class="card-provider">ITI / Mahara-Tech</div>
+                    <h3 class="card-title">ISTQB Foundation Level V4.0</h3>
+                    <div class="card-date">14/04/26</div>
+                    <p class="card-desc">شهادة اجتياز المستوى التأسيسي في اختبار البرمجيات وضمان الجودة.</p>
+                    <div class="card-tags"><span>QA Testing</span><span>Automation</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 2. Angular -->
+                <div class="cert-card reveal-up" data-provider="other steps">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/angular.png" alt="Angular"></div>
+                    <div class="card-provider">Steps</div>
+                    <h3 class="card-title">Frontend Angular Development Diploma</h3>
+                    <div class="card-date">Sep 20, 2025</div>
+                    <p class="card-desc">دبلومة مكثفة لمدة 6 أشهر لتطوير واجهات المستخدم المتقدمة باستخدام Angular.</p>
+                    <div class="card-tags"><span>Angular</span><span>Frontend</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 3. Meta JS -->
+                <div class="cert-card reveal-up" data-provider="meta">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/meta-js.png" alt="Meta JS"></div>
+                    <div class="card-provider">Meta / Coursera</div>
+                    <h3 class="card-title">Programming with JavaScript</h3>
+                    <div class="card-date">Oct 16, 2025</div>
+                    <p class="card-desc">إتقان البرمجة باستخدام لغة جافا سكريبت وتطوير تطبيقات ويب تفاعلية.</p>
+                    <div class="card-tags"><span>JavaScript</span><span>DOM</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 4. Meta Intro -->
+                <div class="cert-card reveal-up" data-provider="meta">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/meta-intro.png" alt="Meta Intro"></div>
+                    <div class="card-provider">Meta / Coursera</div>
+                    <h3 class="card-title">Introduction to Front-End Development</h3>
+                    <div class="card-date">Oct 15, 2025</div>
+                    <p class="card-desc">مقدمة احترافية لتطوير واجهات المستخدم المعتمدة من شركة ميتا.</p>
+                    <div class="card-tags"><span>HTML/CSS</span><span>UI</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 5. Udemy Python -->
+                <div class="cert-card reveal-up" data-provider="udemy">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/udemy-python.png" alt="Python"></div>
+                    <div class="card-provider">Udemy</div>
+                    <h3 class="card-title">Complete Python Course</h3>
+                    <div class="card-date">Sep 24, 2025</div>
+                    <p class="card-desc">دورة شاملة للغة بايثون من الصفر للاحتراف في التطوير وتحليل البيانات.</p>
+                    <div class="card-tags"><span>Python</span><span>Backend</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 6. W3C HTML5 -->
+                <div class="cert-card reveal-up" data-provider="other w3c">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/w3c-html.png" alt="W3C"></div>
+                    <div class="card-provider">W3C / edX</div>
+                    <h3 class="card-title">HTML5.0x: HTML5 and CSS Fundamentals</h3>
+                    <div class="card-date">Sep 3, 2025</div>
+                    <p class="card-desc">المعايير القياسية العالمية لبناء هيكل المواقع من منظمة W3C.</p>
+                    <div class="card-tags"><span>HTML5</span><span>CSS3</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 7. Harvard Data Science -->
+                <div class="cert-card reveal-up" data-provider="harvard">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/harvard-ds.png" alt="Harvard"></div>
+                    <div class="card-provider">HarvardX / edX</div>
+                    <h3 class="card-title">PH125.2x: Data Science: Visualization</h3>
+                    <div class="card-date">Aug 27, 2025</div>
+                    <p class="card-desc">تقنيات استخلاص الرؤى وعرض البيانات المعقدة بطرق مرئية من جامعة هارفارد.</p>
+                    <div class="card-tags"><span>Data Science</span><span>Viz</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 8. IBM Python -->
+                <div class="cert-card reveal-up" data-provider="ibm">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/ibm-python.png" alt="IBM Python"></div>
+                    <div class="card-provider">IBM / edX</div>
+                    <h3 class="card-title">PY0101EN: Python Basics for Data Science</h3>
+                    <div class="card-date">Aug 21, 2025</div>
+                    <p class="card-desc">الأساسيات المنهجية لاستخدام بايثون في تطبيقات علم البيانات من IBM.</p>
+                    <div class="card-tags"><span>Python</span><span>Data Science</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+                
+                <!-- 9. IBM Data Science Intro -->
+                <div class="cert-card reveal-up" data-provider="ibm">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/ibm-ds.png" alt="IBM DS"></div>
+                    <div class="card-provider">IBM / edX</div>
+                    <h3 class="card-title">DS0101EN: Introduction to Data Science</h3>
+                    <div class="card-date">Aug 16, 2025</div>
+                    <p class="card-desc">مقدمة شاملة لاستخدام الأدوات الإحصائية لاستخراج الأنماط من البيانات.</p>
+                    <div class="card-tags"><span>Analytics</span><span>IBM</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 10. Coursera Excel -->
+                <div class="cert-card reveal-up" data-provider="other coursera">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/excel.png" alt="Excel"></div>
+                    <div class="card-provider">Coursera Project Network</div>
+                    <h3 class="card-title">Getting Started with Microsoft Excel</h3>
+                    <div class="card-date">Aug 8, 2025</div>
+                    <p class="card-desc">مشروع عملي لإتقان تنظيم الجداول ومعالجة البيانات باستخدام إكسيل.</p>
+                    <div class="card-tags"><span>Excel</span><span>Data</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 11. ITI Software Testing -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/software-testing.png" alt="Software Testing"></div>
+                    <div class="card-provider">ITI / Mahara-Tech</div>
+                    <h3 class="card-title">Software Testing Concepts & Techniques</h3>
+                    <div class="card-date">30/07/2025</div>
+                    <p class="card-desc">شهادة إتمام كورس مفاهيم وتقنيات اختبار البرمجيات لضمان جودة المشاريع.</p>
+                    <div class="card-tags"><span>QA</span><span>Testing</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 12. ITI Python Basics -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/python-basics.png" alt="Python Basics"></div>
+                    <div class="card-provider">ITI / AI Academy</div>
+                    <h3 class="card-title">Python Programming Basics</h3>
+                    <div class="card-date">Feb 2025</div>
+                    <p class="card-desc">أساسيات لغة بايثون مقدمة من أكاديمية الذكاء الاصطناعي بمعهد ITI.</p>
+                    <div class="card-tags"><span>Python</span><span>AI</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 13. ITI UX Design -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/ux-fundamentals.png" alt="UX Design"></div>
+                    <div class="card-provider">ITI / Mahara-Tech</div>
+                    <h3 class="card-title">UX Design Fundamentals</h3>
+                    <div class="card-date">04/07/2025</div>
+                    <p class="card-desc">دورة أساسيات تصميم تجربة المستخدم لتطوير واجهات مريحة وتفاعلية.</p>
+                    <div class="card-tags"><span>UX/UI</span><span>Design</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 14. ITI Upwork Freelance -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/Upwork.png" alt="Upwork"></div>
+                    <div class="card-provider">ITI / Mahara-Tech[cite: 55]</div>
+                    <h3 class="card-title">Getting started as a freelancer (Upwork)[cite: 55]</h3>
+                    <div class="card-date">08/07/24[cite: 55]</div>
+                    <p class="card-desc">دورة مدتها 50 دقيقة للبدء والنجاح في منصة العمل الحر Upwork[cite: 55].</p>
+                    <div class="card-tags"><span>Freelance</span><span>Upwork</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 15. ITI AI For Everyone -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/everyone.png" alt="AI For Everyone"></div>
+                    <div class="card-provider">ITI / AI Academy[cite: 56]</div>
+                    <h3 class="card-title">AI For Everyone (AI4E)[cite: 56]</h3>
+                    <div class="card-date">July 9, 2024[cite: 56]</div>
+                    <p class="card-desc">دورة تعريفية عن الذكاء الاصطناعي مدتها ساعة و 30 دقيقة[cite: 56].</p>
+                    <div class="card-tags"><span>AI</span><span>Artificial Intelligence</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 16. ITI Freelance Basics (Arabic) -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/freelance-ar.png" alt="Freelance Basics"></div>
+                    <div class="card-provider">ITI / Mahara-Tech[cite: 57]</div>
+                    <h3 class="card-title">أساسيات العمل الحر[cite: 57]</h3>
+                    <div class="card-date">30/06/24[cite: 57]</div>
+                    <p class="card-desc">دورة تدريبية متكاملة (3 ساعات و 8 دقائق) لتأسيس مسار العمل الحر[cite: 57].</p>
+                    <div class="card-tags"><span>Freelance</span><span>Soft Skills</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 17. ITI Database Fundamentals -->
+                <div class="cert-card reveal-up" data-provider="iti">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/database.png" alt="Database Fundamentals"></div>
+                    <div class="card-provider">ITI / Mahara-Tech[cite: 58]</div>
+                    <h3 class="card-title">Database Fundamentals[cite: 58]</h3>
+                    <div class="card-date">17/05/25[cite: 58]</div>
+                    <p class="card-desc">دورة شاملة (ساعتين و 47 دقيقة) لإتقان أساسيات تصميم وإدارة قواعد البيانات[cite: 58].</p>
+                    <div class="card-tags"><span>Database</span><span>SQL</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 18. Almentor HTML5 Web Dev -->
+                <div class="cert-card reveal-up" data-provider="almentor">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/almentor-html5.png" alt="Web Dev HTML5"></div>
+                    <div class="card-provider">Almentor / BUA</div>
+                    <h3 class="card-title">The Complete Web Development Course with HTML5</h3>
+                    <div class="card-date">11-08-2024</div>
+                    <p class="card-desc">الدورة الشاملة لتطوير الويب باستخدام تقنيات HTML5 المتقدمة.</p>
+                    <div class="card-tags"><span>HTML5</span><span>Web Dev</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+                <!-- 19. Almentor JS & jQuery -->
+                <div class="cert-card reveal-up" data-provider="almentor">
+                    <div class="card-border"></div>
+                    <div class="card-img-wrapper"><img src="assets/images/almentor-js.png" alt="JS and jQuery"></div>
+                    <div class="card-provider">Almentor / BUA</div>
+                    <h3 class="card-title">JAVASCRIPT & JQUERY</h3>
+                    <div class="card-date">14-08-2024</div>
+                    <p class="card-desc">دورة تطبيقية لتعلم لغة JavaScript ومكتبة jQuery لبرمجة التفاعلات.</p>
+                    <div class="card-tags"><span>JavaScript</span><span>jQuery</span></div>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Interactive Modal -->
+    <div class="modal" id="certModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="footer-link">GitHub</a>
+            <a href="#" class="footer-link">LinkedIn</a>
+            <a href="#" class="footer-link">Email</a>
+        </div>
+        <!-- تم تعديل حقوق الملكية هنا -->
+        <p class="copyright">&copy; 2026 ENG :: Aboelyazed hatem. Engineered with Passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
