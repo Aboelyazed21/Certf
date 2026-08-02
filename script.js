@@ -1,30 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Custom Smooth Cursor
-    const dot = document.querySelector('.cursor-dot');
-    const outline = document.querySelector('.cursor-outline');
-    
-    window.addEventListener('mousemove', (e) => {
-        dot.style.left = `${e.clientX}px`;
-        dot.style.top = `${e.clientY}px`;
-        outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 300, fill: "forwards" });
-    });
-
-    const interactives = document.querySelectorAll('button, a, input, .cert-card');
-    interactives.forEach(el => {
-        el.addEventListener('mouseenter', () => { 
-            outline.style.transform = 'translate(-50%, -50%) scale(1.5)'; 
-            outline.style.borderColor = 'rgba(34, 211, 238, 0.5)';
-            outline.style.backgroundColor = 'rgba(34, 211, 238, 0.1)'; 
-        });
-        el.addEventListener('mouseleave', () => { 
-            outline.style.transform = 'translate(-50%, -50%) scale(1)'; 
-            outline.style.borderColor = 'var(--secondary)';
-            outline.style.backgroundColor = 'transparent'; 
-        });
-    });
-
-    // 2. Premium Loading Screen
+    // 1. Clean Loading Screen
     const loader = document.getElementById('loader');
     setTimeout(() => {
         loader.style.opacity = '0';
@@ -33,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
             startTypingEffect();
             initScrollReveal();
             runCounters();
-        }, 800);
-    }, 1500);
+        }, 500);
+    }, 1200);
 
-    // 3. Typing Effect
+    // 2. Typing Effect
     const subtitleText = "A curated collection of my professional certifications, showcasing a relentless pursuit of knowledge in Computer Science, UI/UX, and AI.";
     const typeTarget = document.getElementById('typewriter-text');
     let charIndex = 0;
@@ -44,22 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (charIndex < subtitleText.length) {
             typeTarget.textContent += subtitleText.charAt(charIndex);
             charIndex++;
-            setTimeout(startTypingEffect, 25);
+            setTimeout(startTypingEffect, 20);
         }
     }
 
-    // 4. Mouse Spotlight Effect for Cards (The Awwwards Touch)
-    document.getElementById('certificatesGrid').onmousemove = e => {
-        for(const card of document.getElementsByClassName('cert-card')) {
-            const rect = card.getBoundingClientRect(),
-                  x = e.clientX - rect.left,
-                  y = e.clientY - rect.top;
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
-        }
-    };
-
-    // 5. Scroll Progress & Scroll To Action
+    // 3. Scroll Progress & Scroll To Action
     document.getElementById('exploreBtn').addEventListener('click', () => {
         document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'});
     });
@@ -77,14 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // 6. Advanced Scroll Reveal
+    // 4. Scroll Reveal
     function initScrollReveal() {
         const reveals = document.querySelectorAll('.reveal-up');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Reveal only once for performance
+                    observer.unobserve(entry.target); 
                 }
             });
         }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
@@ -92,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         reveals.forEach(reveal => observer.observe(reveal));
     }
 
-    // 7. Animated Counters
+    // 5. Animated Counters
     let countersRun = false;
     function runCounters() {
         if(countersRun) return;
@@ -114,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         countersRun = true;
     }
 
-    // 8. Dynamic Search & Filtering with Animations
+    // 6. Dynamic Search & Filtering
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.cert-card');
@@ -140,10 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 10);
             } else {
                 card.style.opacity = '0';
-                card.style.transform = 'scale(0.95) translateY(20px)';
+                card.style.transform = 'scale(0.95) translateY(10px)';
                 setTimeout(() => {
                     if(card.style.opacity === '0') card.style.display = 'none';
-                }, 400); // Wait for transition
+                }, 300);
             }
         });
     }
@@ -157,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     searchInput.addEventListener('input', filterCards);
 
-    // 9. Fullscreen Elegant Modal
+    // 7. Clean Modal
     const modal = document.getElementById('certModal');
     const modalBody = document.getElementById('modalBody');
     const closeBtn = document.getElementById('closeModal');
@@ -177,8 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img src="${imgSrc}" alt="${title}">
                 <h2>${title}</h2>
                 <div class="modal-info">
-                    <span><strong style="color:#fff;">Provider:</strong> ${provider}</span>
-                    <span><strong style="color:#fff;">Date:</strong> ${date}</span>
+                    <span><strong>Provider:</strong> ${provider}</span>
+                    <span><strong>Date:</strong> ${date}</span>
                 </div>
                 <p class="modal-desc">${desc}</p>
                 <div class="card-tags" style="margin-bottom: 0;">
@@ -187,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden'; 
         });
     });
 
