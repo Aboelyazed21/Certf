@@ -1,6 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Clean Loading Screen
+    // 1. Dark Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const userTheme = localStorage.getItem('theme');
+    
+    if (userTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        let currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // 2. Clean Loading Screen
     const loader = document.getElementById('loader');
     setTimeout(() => {
         loader.style.opacity = '0';
@@ -12,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }, 1200);
 
-    // 2. Typing Effect
+    // 3. Typing Effect
     const subtitleText = "A curated collection of my professional certifications, showcasing a relentless pursuit of knowledge in Computer Science, UI/UX, and AI.";
     const typeTarget = document.getElementById('typewriter-text');
     let charIndex = 0;
@@ -24,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 3. Scroll Progress & Scroll To Action
+    // 4. Scroll Progress & Scroll To Action
     document.getElementById('exploreBtn').addEventListener('click', () => {
         document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'});
     });
@@ -42,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // 4. Scroll Reveal
+    // 5. Scroll Reveal
     function initScrollReveal() {
         const reveals = document.querySelectorAll('.reveal-up');
         const observer = new IntersectionObserver((entries) => {
@@ -57,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         reveals.forEach(reveal => observer.observe(reveal));
     }
 
-    // 5. Animated Counters
+    // 6. Animated Counters
     let countersRun = false;
     function runCounters() {
         if(countersRun) return;
@@ -79,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         countersRun = true;
     }
 
-    // 6. Dynamic Search & Filtering
+    // 7. Dynamic Search & Filtering
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.cert-card');
@@ -122,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     searchInput.addEventListener('input', filterCards);
 
-    // 7. Clean Modal
+    // 8. Clean Modal
     const modal = document.getElementById('certModal');
     const modalBody = document.getElementById('modalBody');
     const closeBtn = document.getElementById('closeModal');
