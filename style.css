@@ -5,7 +5,7 @@
     --card-hover: #141a29;
     --border-color: #1f293d;
     --primary: #3b82f6;
-    --primary-glow: rgba(59, 130, 246, 0.3);
+    --primary-glow: rgba(59, 130, 246, 0.35);
     --text-main: #f8fafc;
     --text-sec: #94a3b8;
     --font-main: 'Inter', sans-serif;
@@ -15,10 +15,10 @@
     --bg-color: #f8fafc;
     --navbar-bg: rgba(248, 250, 252, 0.85);
     --card-bg: #ffffff;
-    --card-hover: #f8fafc;
+    --card-hover: #ffffff;
     --border-color: #e2e8f0;
     --primary: #2563eb;
-    --primary-glow: rgba(37, 99, 235, 0.2);
+    --primary-glow: rgba(37, 99, 235, 0.25);
     --text-main: #0f172a;
     --text-sec: #64748b;
 }
@@ -271,12 +271,12 @@ body {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
 /* ==============================================
-   تحسين الـ Hover لتوضيح الشهادة بشكل رائع
+   تأثير تكبير الكارد عند الـ Hover بوضوح تام
    ============================================== */
 .cert-card {
     background: var(--card-bg);
@@ -285,15 +285,18 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    /* جعل الكارد يأخذ طبقة أعلى ويستجيب بنعومة وسرعة */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
 .cert-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-10px) scale(1.04); /* تكبير الكارد ورفعه لأعلى */
+    z-index: 10; /* ليظهر فوق باقي الكروت ولا يتداخل معهم */
     border-color: var(--primary);
-    box-shadow: 0 20px 40px var(--primary-glow);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 25px var(--primary-glow);
     background: var(--card-hover);
 }
 
@@ -309,13 +312,12 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
-    filter: brightness(0.95);
+    transition: transform 0.4s ease, filter 0.3s ease;
 }
 
 .cert-card:hover .card-img-wrapper img {
-    transform: scale(1.1);
-    filter: brightness(1.05); /* تفتيح بسيط للصورة ووضوحها عند الـ Hover */
+    transform: scale(1.08); /* تكبير إضافي بسيط للصورة داخل الكارد */
+    filter: brightness(1.05);
 }
 
 .card-content-area {
@@ -349,7 +351,7 @@ body {
 }
 
 .cert-card:hover .card-title {
-    color: var(--primary); /* تلوين العنوان بلون مميز عند الوقوف على الشهادة */
+    color: var(--primary);
 }
 
 .card-footer-info {
@@ -393,6 +395,10 @@ body {
 .grid.list-view .cert-card {
     flex-direction: row;
     align-items: center;
+}
+
+.grid.list-view .cert-card:hover {
+    transform: translateY(-5px) scale(1.01);
 }
 
 .grid.list-view .card-img-wrapper {
