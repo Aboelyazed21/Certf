@@ -1,147 +1,74 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Dark Mode Toggle
+    // 1. Dark / Light Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
-    const userTheme = localStorage.getItem('theme');
+    const userTheme = localStorage.getItem('theme') || 'dark';
     
-    if (userTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    document.documentElement.setAttribute('data-theme', userTheme);
 
     themeToggle.addEventListener('click', () => {
         let currentTheme = document.documentElement.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        }
+        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
     });
 
-    // 2. Clean Loading Screen
-    const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.style.visibility = 'hidden';
-            startTypingEffect();
-            initScrollReveal();
-            runCounters();
-        }, 500);
-    }, 1200);
-
-    // 3. Typing Effect
-    const subtitleText = "A curated collection of my professional certifications, showcasing a relentless pursuit of knowledge in Computer Science, UI/UX, and AI.";
-    const typeTarget = document.getElementById('typewriter-text');
-    let charIndex = 0;
-    function startTypingEffect() {
-        if (charIndex < subtitleText.length) {
-            typeTarget.textContent += subtitleText.charAt(charIndex);
-            charIndex++;
-            setTimeout(startTypingEffect, 20);
-        }
-    }
-
-    // 4. Scroll Progress & Scroll To Action
-    document.getElementById('exploreBtn').addEventListener('click', () => {
-        document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'});
-    });
-
-    const progressBar = document.getElementById('scroll-progress');
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        progressBar.style.width = (winScroll / height) * 100 + "%";
-        
-        if (winScroll > 600) backToTopBtn.classList.add('visible');
-        else backToTopBtn.classList.remove('visible');
-    });
-    
-    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // 5. Scroll Reveal
-    function initScrollReveal() {
-        const reveals = document.querySelectorAll('.reveal-up');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); 
-                }
-            });
-        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-        
-        reveals.forEach(reveal => observer.observe(reveal));
-    }
-
-    // 6. Animated Counters
-    let countersRun = false;
-    function runCounters() {
-        if(countersRun) return;
-        document.querySelectorAll('.counter').forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const speed = 150;
-            const updateCount = () => {
-                const count = +counter.innerText;
-                const inc = target / speed;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 15);
-                } else {
-                    counter.innerText = target + (target > 50 ? '+' : '');
-                }
-            };
-            updateCount();
-        });
-        countersRun = true;
-    }
-
-    // 7. Dynamic Search & Filtering
-    const searchInput = document.getElementById('searchInput');
+    // 2. Filtering Logic
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.cert-card');
-
-    function filterCards() {
-        const query = searchInput.value.toLowerCase();
-        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-
-        cards.forEach(card => {
-            const title = card.querySelector('.card-title').innerText.toLowerCase();
-            const providerText = card.querySelector('.card-provider').innerText.toLowerCase();
-            const tags = card.querySelector('.card-tags').innerText.toLowerCase();
-            const filterAttr = card.getAttribute('data-provider');
-            
-            const matchesSearch = title.includes(query) || providerText.includes(query) || tags.includes(query);
-            const matchesFilter = activeFilter === 'all' || filterAttr.includes(activeFilter);
-
-            if(matchesSearch && matchesFilter) {
-                card.style.display = 'flex';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1) translateY(0)';
-                }, 10);
-            } else {
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.95) translateY(10px)';
-                setTimeout(() => {
-                    if(card.style.opacity === '0') card.style.display = 'none';
-                }, 300);
-            }
-        });
-    }
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             filterBtns.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
-            filterCards();
+            
+            const filter = e.target.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     });
-    searchInput.addEventListener('input', filterCards);
 
-    // 8. Clean Modal
+    // 3. Sorting Logic (Newest / Oldest)
+    const sortSelect = document.getElementById('sortSelect');
+    const grid = document.getElementById('certificatesGrid');
+
+    sortSelect.addEventListener('change', () => {
+        const cardsArray = Array.from(cards);
+        
+        cardsArray.sort((a, b) => {
+            const dateA = new Date(a.getAttribute('data-date'));
+            const dateB = new Date(b.getAttribute('data-date'));
+            
+            return sortSelect.value === 'newest' ? dateB - dateA : dateA - dateB;
+        });
+
+        cardsArray.forEach(card => grid.appendChild(card));
+    });
+
+    // 4. Grid vs List View Toggle
+    const gridViewBtn = document.getElementById('gridViewBtn');
+    const listViewBtn = document.getElementById('listViewBtn');
+
+    gridViewBtn.addEventListener('click', () => {
+        grid.classList.remove('list-view');
+        gridViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+    });
+
+    listViewBtn.addEventListener('click', () => {
+        grid.classList.add('list-view');
+        listViewBtn.classList.add('active');
+        gridViewBtn.classList.remove('active');
+    });
+
+    // 5. Modal Popup View
     const modal = document.getElementById('certModal');
     const modalBody = document.getElementById('modalBody');
     const closeBtn = document.getElementById('closeModal');
@@ -152,10 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = e.target.closest('.cert-card');
             const imgSrc = card.querySelector('img').src;
             const title = card.querySelector('.card-title').innerText;
-            const provider = card.querySelector('.card-provider').innerText;
+            const provider = card.querySelector('.provider-name').innerText;
             const date = card.querySelector('.card-date').innerText;
             const desc = card.querySelector('.card-desc').innerText;
-            const tagsHtml = card.querySelector('.card-tags').innerHTML;
 
             modalBody.innerHTML = `
                 <img src="${imgSrc}" alt="${title}">
@@ -165,13 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span><strong>Date:</strong> ${date}</span>
                 </div>
                 <p class="modal-desc">${desc}</p>
-                <div class="card-tags" style="margin-bottom: 0;">
-                    ${tagsHtml}
-                </div>
             `;
             
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
+            document.body.style.overflow = 'hidden';
         });
     });
 
@@ -179,10 +102,24 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
-    
+
     closeBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => {
-        if(e.key === "Escape" && modal.classList.contains('active')) closeModal();
+        if (e.key === "Escape") closeModal();
+    });
+
+    // 6. Back to Top Button & Scroll Progress
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
