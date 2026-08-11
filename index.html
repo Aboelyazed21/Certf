@@ -1,303 +1,294 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aboelyazed hatem   CertF</title>
+    <title>Aboelyazed Hatem - Certificates Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cinematic Video Background -->
-    <div class="video-container">
-        <video autoplay loop muted playsinline class="bg-video">
-            <source src="https://pixabay.com/videos/download/video-92718_medium.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-    </div>
 
-    <!-- Clean Loading Screen -->
-    <div id="loader">
-        <div class="glow-ring"></div>
-        <div class="loader-text">Loading Excellence...</div>
-    </div>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">A</span>
+                <div class="logo-text">
+                    <strong>Aboelyazd Hatem</strong>
+                    <span>Frontend Developer</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certificates" class="active">Certificates</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="cv-btn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Download CV
+                </a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scroll-progress"></div>
-
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
-        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    </button>
-
-    <main>
+    <main id="certificates" class="main-content">
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-badge reveal-up">Professional Portfolio</div>
-            <h1 class="hero-title zezo-anim reveal-up" style="animation-delay: 0.1s;">Aboelyazed Hatem</h1>
-            <p class="hero-subtitle reveal-up" id="typewriter-text" style="animation-delay: 0.2s;"></p>
-            <button class="cta-button reveal-up" id="exploreBtn" style="animation-delay: 0.4s;">
-                Explore Credentials
-            </button>
+        <section class="portfolio-hero">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                ACHIEVEMENTS
+            </div>
+            <h1>My Certificates</h1>
+            <p>A collection of my courses, certifications and achievements that reflect my continuous learning journey.</p>
         </section>
 
-        <!-- Statistics Section -->
-        <section class="stats reveal-up">
-            <div class="stat-card">
-                <h3 class="counter" data-target="19">0</h3>
-                <p>Certificates</p>
+        <!-- Controls: Filters & Search -->
+        <section class="controls-section">
+            <div class="filters" id="filterContainer">
+                <button class="filter-btn active" data-filter="all">All Certificates</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+                <button class="filter-btn" data-filter="soft">Soft Skills</button>
             </div>
-            <div class="stat-card">
-                <h3 class="counter" data-target="8">0</h3>
-                <p>Providers</p>
-            </div>
-            <div class="stat-card">
-                <h3 class="counter" data-target="350">0</h3>
-                <p>Learning Hours</p>
-            </div>
-            <div class="stat-card">
-                <h3 class="counter" data-target="100">0</h3>
-                <p>% Passion</p>
+
+            <div class="right-controls">
+                <div class="sort-dropdown">
+                    <select id="sortSelect">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-icon-btn active" id="gridViewBtn" title="Grid View">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </button>
+                    <button class="view-icon-btn" id="listViewBtn" title="List View">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio">
-            
-            <!-- Search & Filters -->
-            <div class="controls reveal-up">
-                <div class="search-bar">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <input type="text" id="searchInput" placeholder="Search by name, provider, or skill...">
-                </div>
-                
-                <div class="filters" id="filterContainer">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="meta">Meta</button>
-                    <button class="filter-btn" data-filter="ibm">IBM</button>
-                    <button class="filter-btn" data-filter="harvard">Harvard</button>
-                    <button class="filter-btn" data-filter="udemy">Udemy</button>
-                    <button class="filter-btn" data-filter="iti">ITI</button>
-                    <button class="filter-btn" data-filter="almentor">Almentor</button>
-                    <button class="filter-btn" data-filter="other">Other</button>
-                </div>
-            </div>
+        <!-- Certificates Grid -->
+        <div class="grid" id="certificatesGrid">
 
-            <!-- Certificates Grid -->
-            <div class="grid" id="certificatesGrid">
-
-                <!-- 1. ISTQB -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/istqb.png" alt="ISTQB"></div>
-                    <div class="card-provider">ITI / Mahara-Tech</div>
+            <!-- 1. ISTQB -->
+            <div class="cert-card" data-category="tools" data-date="2026-04-14">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/istqb.png" alt="ISTQB">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">ITI / Mahara-Tech</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
                     <h3 class="card-title">ISTQB Foundation Level V4.0</h3>
-                    <div class="card-date">14/04/26</div>
-                    <p class="card-desc">شهادة اجتياز المستوى التأسيسي في اختبار البرمجيات وضمان الجودة.</p>
-                    <div class="card-tags"><span>QA Testing</span><span>Automation</span></div>
-                    <button class="view-btn">View Certificate</button>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Apr 2026
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
                 </div>
-
-                <!-- 2. Angular -->
-                <div class="cert-card reveal-up" data-provider="other steps">
-                    <div class="card-img-wrapper"><img src="assets/images/angular.png" alt="Angular"></div>
-                    <div class="card-provider">Steps</div>
-                    <h3 class="card-title">Frontend Angular Development Diploma</h3>
-                    <div class="card-date">Sep 20, 2025</div>
-                    <p class="card-desc">دبلومة مكثفة لمدة 6 أشهر لتطوير واجهات المستخدم المتقدمة باستخدام Angular.</p>
-                    <div class="card-tags"><span>Angular</span><span>Frontend</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 3. Meta JS -->
-                <div class="cert-card reveal-up" data-provider="meta">
-                    <div class="card-img-wrapper"><img src="assets/images/meta-js.png" alt="Meta JS"></div>
-                    <div class="card-provider">Meta / Coursera</div>
-                    <h3 class="card-title">Programming with JavaScript</h3>
-                    <div class="card-date">Oct 16, 2025</div>
-                    <p class="card-desc">إتقان البرمجة باستخدام لغة جافا سكريبت وتطوير تطبيقات ويب تفاعلية.</p>
-                    <div class="card-tags"><span>JavaScript</span><span>DOM</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 4. Meta Intro -->
-                <div class="cert-card reveal-up" data-provider="meta">
-                    <div class="card-img-wrapper"><img src="assets/images/meta-intro.png" alt="Meta Intro"></div>
-                    <div class="card-provider">Meta / Coursera</div>
-                    <h3 class="card-title">Introduction to Front-End Development</h3>
-                    <div class="card-date">Oct 15, 2025</div>
-                    <p class="card-desc">مقدمة احترافية لتطوير واجهات المستخدم المعتمدة من شركة ميتا.</p>
-                    <div class="card-tags"><span>HTML/CSS</span><span>UI</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 5. Udemy Python -->
-                <div class="cert-card reveal-up" data-provider="udemy">
-                    <div class="card-img-wrapper"><img src="assets/images/udemy-python.png" alt="Python"></div>
-                    <div class="card-provider">Udemy</div>
-                    <h3 class="card-title">Complete Python Course</h3>
-                    <div class="card-date">Sep 24, 2025</div>
-                    <p class="card-desc">دورة شاملة للغة بايثون من الصفر للاحتراف في التطوير وتحليل البيانات.</p>
-                    <div class="card-tags"><span>Python</span><span>Backend</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 6. W3C HTML5 -->
-                <div class="cert-card reveal-up" data-provider="other w3c">
-                    <div class="card-img-wrapper"><img src="assets/images/w3c-html.png" alt="W3C"></div>
-                    <div class="card-provider">W3C / edX</div>
-                    <h3 class="card-title">HTML5.0x: HTML5 and CSS Fundamentals</h3>
-                    <div class="card-date">Sep 3, 2025</div>
-                    <p class="card-desc">المعايير القياسية العالمية لبناء هيكل المواقع من منظمة W3C.</p>
-                    <div class="card-tags"><span>HTML5</span><span>CSS3</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 7. Harvard Data Science -->
-                <div class="cert-card reveal-up" data-provider="harvard">
-                    <div class="card-img-wrapper"><img src="assets/images/harvard-ds.png" alt="Harvard"></div>
-                    <div class="card-provider">HarvardX / edX</div>
-                    <h3 class="card-title">PH125.2x: Data Science: Visualization</h3>
-                    <div class="card-date">Aug 27, 2025</div>
-                    <p class="card-desc">تقنيات استخلاص الرؤى وعرض البيانات المعقدة بطرق مرئية من جامعة هارفارد.</p>
-                    <div class="card-tags"><span>Data Science</span><span>Viz</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 8. IBM Python -->
-                <div class="cert-card reveal-up" data-provider="ibm">
-                    <div class="card-img-wrapper"><img src="assets/images/ibm-python.png" alt="IBM Python"></div>
-                    <div class="card-provider">IBM / edX</div>
-                    <h3 class="card-title">PY0101EN: Python Basics for Data Science</h3>
-                    <div class="card-date">Aug 21, 2025</div>
-                    <p class="card-desc">الأساسيات المنهجية لاستخدام بايثون في تطبيقات علم البيانات من IBM.</p>
-                    <div class="card-tags"><span>Python</span><span>Data Science</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-                
-                <!-- 9. IBM Data Science Intro -->
-                <div class="cert-card reveal-up" data-provider="ibm">
-                    <div class="card-img-wrapper"><img src="assets/images/ibm-ds.png" alt="IBM DS"></div>
-                    <div class="card-provider">IBM / edX</div>
-                    <h3 class="card-title">DS0101EN: Introduction to Data Science</h3>
-                    <div class="card-date">Aug 16, 2025</div>
-                    <p class="card-desc">مقدمة شاملة لاستخدام الأدوات الإحصائية لاستخراج الأنماط من البيانات.</p>
-                    <div class="card-tags"><span>Analytics</span><span>IBM</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 10. Coursera Excel -->
-                <div class="cert-card reveal-up" data-provider="other coursera">
-                    <div class="card-img-wrapper"><img src="assets/images/excel.png" alt="Excel"></div>
-                    <div class="card-provider">Coursera Project Network</div>
-                    <h3 class="card-title">Getting Started with Microsoft Excel</h3>
-                    <div class="card-date">Aug 8, 2025</div>
-                    <p class="card-desc">مشروع عملي لإتقان تنظيم الجداول ومعالجة البيانات باستخدام إكسيل.</p>
-                    <div class="card-tags"><span>Excel</span><span>Data</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 11. ITI Software Testing -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/software-testing.png" alt="Software Testing"></div>
-                    <div class="card-provider">ITI / Mahara-Tech</div>
-                    <h3 class="card-title">Software Testing Concepts & Techniques</h3>
-                    <div class="card-date">30/07/2025</div>
-                    <p class="card-desc">شهادة إتمام كورس مفاهيم وتقنيات اختبار البرمجيات لضمان جودة المشاريع.</p>
-                    <div class="card-tags"><span>QA</span><span>Testing</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 12. ITI Python Basics -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/python-basics.png" alt="Python Basics"></div>
-                    <div class="card-provider">ITI / AI Academy</div>
-                    <h3 class="card-title">Python Programming Basics</h3>
-                    <div class="card-date">Feb 2025</div>
-                    <p class="card-desc">أساسيات لغة بايثون مقدمة من أكاديمية الذكاء الاصطناعي بمعهد ITI.</p>
-                    <div class="card-tags"><span>Python</span><span>AI</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 13. ITI UX Design -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/ux-fundamentals.png" alt="UX Design"></div>
-                    <div class="card-provider">ITI / Mahara-Tech</div>
-                    <h3 class="card-title">UX Design Fundamentals</h3>
-                    <div class="card-date">04/07/2025</div>
-                    <p class="card-desc">دورة أساسيات تصميم تجربة المستخدم لتطوير واجهات مريحة وتفاعلية.</p>
-                    <div class="card-tags"><span>UX/UI</span><span>Design</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 14. ITI Upwork Freelance -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/Upwork.png" alt="Upwork"></div>
-                    <div class="card-provider">ITI / Mahara-Tech</div>
-                    <h3 class="card-title">Getting started as a freelancer (Upwork)</h3>
-                    <div class="card-date">08/07/24</div>
-                    <p class="card-desc">دورة مدتها 50 دقيقة للبدء والنجاح في منصة العمل الحر Upwork.</p>
-                    <div class="card-tags"><span>Freelance</span><span>Upwork</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 15. ITI AI For Everyone -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/everyone.png" alt="AI For Everyone"></div>
-                    <div class="card-provider">ITI / AI Academy</div>
-                    <h3 class="card-title">AI For Everyone (AI4E)</h3>
-                    <div class="card-date">July 9, 2024</div>
-                    <p class="card-desc">دورة تعريفية عن الذكاء الاصطناعي مدتها ساعة و 30 دقيقة.</p>
-                    <div class="card-tags"><span>AI</span><span>Artificial Intelligence</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 16. ITI Freelance Basics (Arabic) -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/freelance-ar.png" alt="Freelance Basics"></div>
-                    <div class="card-provider">ITI / Mahara-Tech</div>
-                    <h3 class="card-title">أساسيات العمل الحر</h3>
-                    <div class="card-date">30/06/24</div>
-                    <p class="card-desc">دورة تدريبية متكاملة (3 ساعات و 8 دقائق) لتأسيس مسار العمل الحر.</p>
-                    <div class="card-tags"><span>Freelance</span><span>Soft Skills</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 17. ITI Database Fundamentals -->
-                <div class="cert-card reveal-up" data-provider="iti">
-                    <div class="card-img-wrapper"><img src="assets/images/database.png" alt="Database Fundamentals"></div>
-                    <div class="card-provider">ITI / Mahara-Tech</div>
-                    <h3 class="card-title">Database Fundamentals</h3>
-                    <div class="card-date">17/05/25</div>
-                    <p class="card-desc">دورة شاملة (ساعتين و 47 دقيقة) لإتقان أساسيات تصميم وإدارة قواعد البيانات.</p>
-                    <div class="card-tags"><span>Database</span><span>SQL</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 18. Almentor HTML5 Web Dev -->
-                <div class="cert-card reveal-up" data-provider="almentor">
-                    <div class="card-img-wrapper"><img src="assets/images/almentor-html5.png" alt="Web Dev HTML5"></div>
-                    <div class="card-provider">Almentor / BUA</div>
-                    <h3 class="card-title">The Complete Web Development Course with HTML5</h3>
-                    <div class="card-date">11-08-2024</div>
-                    <p class="card-desc">الدورة الشاملة لتطوير الويب باستخدام تقنيات HTML5 المتقدمة.</p>
-                    <div class="card-tags"><span>HTML5</span><span>Web Dev</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
-                <!-- 19. Almentor JS & jQuery -->
-                <div class="cert-card reveal-up" data-provider="almentor">
-                    <div class="card-img-wrapper"><img src="assets/images/almentor-js.png" alt="JS and jQuery"></div>
-                    <div class="card-provider">Almentor / BUA</div>
-                    <h3 class="card-title">JAVASCRIPT & JQUERY</h3>
-                    <div class="card-date">14-08-2024</div>
-                    <p class="card-desc">دورة تطبيقية لتعلم لغة JavaScript ومكتبة jQuery لبرمجة التفاعلات.</p>
-                    <div class="card-tags"><span>JavaScript</span><span>jQuery</span></div>
-                    <button class="view-btn">View Certificate</button>
-                </div>
-
+                <div style="display:none;" class="card-desc">شهادة اجتياز المستوى التأسيسي في اختبار البرمجيات وضمان الجودة.</div>
+                <div style="display:none;" class="card-tags"><span>QA Testing</span><span>Automation</span></div>
             </div>
-        </section>
+
+            <!-- 2. Angular -->
+            <div class="cert-card" data-category="web" data-date="2025-09-20">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/angular.png" alt="Angular">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">Steps</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">Frontend Angular Development</h3>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Sep 2025
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="display:none;" class="card-desc">دبلومة مكثفة لتطوير واجهات المستخدم المتقدمة باستخدام Angular.</div>
+                <div style="display:none;" class="card-tags"><span>Angular</span><span>Frontend</span></div>
+            </div>
+
+            <!-- 3. Meta JS -->
+            <div class="cert-card" data-category="programming" data-date="2025-10-16">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/meta-js.png" alt="Meta JS">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">Meta / Coursera</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">Programming with JavaScript</h3>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Oct 2025
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="display:none;" class="card-desc">إتقان البرمجة باستخدام لغة جافا سكريبت وتطوير تطبيقات ويب تفاعلية.</div>
+                <div style="display:none;" class="card-tags"><span>JavaScript</span><span>DOM</span></div>
+            </div>
+
+            <!-- 4. Meta Intro -->
+            <div class="cert-card" data-category="web" data-date="2025-10-15">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/meta-intro.png" alt="Meta Intro">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">Meta / Coursera</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">Intro to Front-End Development</h3>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Oct 2025
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="display:none;" class="card-desc">مقدمة احترافية لتطوير واجهات المستخدم المعتمدة من شركة ميتا.</div>
+                <div style="display:none;" class="card-tags"><span>HTML/CSS</span><span>UI</span></div>
+            </div>
+
+            <!-- 5. Udemy Python -->
+            <div class="cert-card" data-category="programming" data-date="2025-09-24">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/udemy-python.png" alt="Python">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">Udemy</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">Complete Python Course</h3>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Sep 2025
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="display:none;" class="card-desc">دورة شاملة للغة بايثون من الصفر للاحتراف في التطوير وتحليل البيانات.</div>
+                <div style="display:none;" class="card-tags"><span>Python</span><span>Backend</span></div>
+            </div>
+
+            <!-- 6. W3C HTML5 -->
+            <div class="cert-card" data-category="web" data-date="2025-09-03">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/w3c-html.png" alt="W3C">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">W3C / edX</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">HTML5 and CSS Fundamentals</h3>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Sep 2025
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="display:none;" class="card-desc">المعايير القياسية العالمية لبناء هيكل المواقع من منظمة W3C.</div>
+                <div style="display:none;" class="card-tags"><span>HTML5</span><span>CSS3</span></div>
+            </div>
+
+            <!-- 7. ITI Freelance Basics -->
+            <div class="cert-card" data-category="soft" data-date="2024-06-30">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/freelance-ar.png" alt="Freelance Basics">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">ITI / Mahara-Tech</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">أساسيات العمل الحر</h3>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Jun 2024
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="display:none;" class="card-desc">دورة تدريبية متكاملة لتأسيس مسار العمل الحر.</div>
+                <div style="display:none;" class="card-tags"><span>Freelance</span><span>Soft Skills</span></div>
+            </div>
+
+            <!-- 8. Almentor JS & jQuery -->
+            <div class="cert-card" data-category="programming" data-date="2024-08-14">
+                <div class="card-img-wrapper">
+                    <img src="assets/images/almentor-js.png" alt="JS and jQuery">
+                </div>
+                <div class="card-content-area">
+                    <div class="card-provider-row">
+                        <span class="provider-name">Almentor / BUA</span>
+                        <svg class="verified-badge" viewBox="0 0 24 24" width="16" height="16" stroke="#3b82f6" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h3 class="card-title">JAVASCRIPT & JQUERY</h3>
+                    <div class="card-footer-info">
+                        <span class="card-date">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Aug 2024
+                        </span>
+                        <button class="view-link-btn view-btn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div style="display:none;" class="card-desc">دورة تطبيقية لتعلم لغة JavaScript ومكتبة jQuery لبرمجة التفاعلات.</div>
+                <div style="display:none;" class="card-tags"><span>JavaScript</span><span>jQuery</span></div>
+            </div>
+
+        </div>
+
+        <!-- Coming Soon Footer Banner inside grid area -->
+        <div class="coming-soon-banner">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+            More certificates coming soon...
+        </div>
     </main>
 
     <!-- Interactive Modal -->
@@ -312,13 +303,8 @@
     <!-- Back to Top -->
     <button class="back-to-top" id="backToTop">↑</button>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#" class="footer-link">GitHub</a>
-            <a href="#" class="footer-link">LinkedIn</a>
-            <a href="#" class="footer-link">Email</a>
-        </div>
-        <p class="copyright">&copy; 2026 ENG :: Aboelyazed hatem. Engineered with Passion.</p>
+    <footer class="footer">
+        <p>&copy; 2026 ENG :: Aboelyazed Hatem. Engineered with Passion.</p>
     </footer>
 
     <script src="script.js"></script>
