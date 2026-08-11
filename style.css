@@ -1,6 +1,3 @@
-/* ==============================================
-   VARIABLES & THEMES
-   ============================================== */
 :root {
     --bg-color: #07090e;
     --navbar-bg: rgba(7, 9, 14, 0.85);
@@ -40,9 +37,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ==============================================
-   NAVBAR
-   ============================================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -164,9 +158,6 @@ body {
 [data-theme="dark"] .theme-toggle .sun-icon { display: none; }
 [data-theme="dark"] .theme-toggle .moon-icon { display: block; }
 
-/* ==============================================
-   MAIN CONTENT & HERO
-   ============================================== */
 .main-content {
     max-width: 1300px;
     margin: 0 auto;
@@ -211,9 +202,6 @@ body {
     margin: 0 auto;
 }
 
-/* ==============================================
-   CONTROLS (FILTERS & VIEW OPTIONS)
-   ============================================== */
 .controls-section {
     display: flex;
     justify-content: space-between;
@@ -297,9 +285,6 @@ body {
     color: #fff;
 }
 
-/* ==============================================
-   CERTIFICATE CARDS GRID
-   ============================================== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -357,7 +342,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.provider-name {
+.card-provider {
     font-size: 0.75rem;
     color: var(--text-sec);
     font-weight: 600;
@@ -382,9 +367,6 @@ body {
 }
 
 .card-date {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
     font-size: 0.75rem;
     color: var(--text-sec);
 }
@@ -409,7 +391,6 @@ body {
     border-color: var(--primary);
 }
 
-/* List View Style override */
 .grid.list-view {
     grid-template-columns: 1fr;
 }
@@ -429,7 +410,6 @@ body {
     width: 100%;
 }
 
-/* Coming Soon Banner */
 .coming-soon-banner {
     display: flex;
     justify-content: center;
@@ -444,9 +424,6 @@ body {
     font-weight: 500;
 }
 
-/* ==============================================
-   MODAL
-   ============================================== */
 .modal {
     position: fixed;
     inset: 0;
@@ -543,9 +520,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* ==============================================
-   FOOTER & BACK TO TOP
-   ============================================== */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
