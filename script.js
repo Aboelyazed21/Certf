@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const filter = e.target.getAttribute('data-filter');
 
             cards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
+                const provider = card.getAttribute('data-provider');
+                if (filter === 'all' || provider === filter) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
@@ -79,9 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = e.target.closest('.cert-card');
             const imgSrc = card.querySelector('img').src;
             const title = card.querySelector('.card-title').innerText;
-            const provider = card.querySelector('.provider-name').innerText;
+            const provider = card.querySelector('.card-provider').innerText;
             const date = card.querySelector('.card-date').innerText;
-            const desc = card.querySelector('.card-desc').innerText;
+            const desc = card.querySelector('.card-desc') ? card.querySelector('.card-desc').innerText : "شهادة معتمدة تعكس إتقان المهارات التقنية.";
 
             modalBody.innerHTML = `
                 <img src="${imgSrc}" alt="${title}">
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "Escape") closeModal();
     });
 
-    // 6. Back to Top Button & Scroll Progress
+    // 6. Back to Top Button
     const backToTopBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 400) {
